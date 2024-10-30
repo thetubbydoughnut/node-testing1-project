@@ -159,8 +159,7 @@ class Car {
    * focus.refuel(99) // returns 600 (tank only holds 20)
    */
   refuel(gallons) {
-    const gallonsThatFit = this.tankSize - this.tank
-    if (gallons <= gallonsThatFit) {
+    if (gallons <= this.tankSize - this.tank) {
       this.tank = this.tank + gallons
     } else {
       this.tank = this.tankSize
@@ -182,8 +181,8 @@ class Car {
  *    // result is false
  * })
  */
-function isEvenNumberAsync(number) {
-  // ✨ implement
+async function isEvenNumberAsync(number) {
+  return number % 2 === 0 || false
 }
 
 module.exports = {
